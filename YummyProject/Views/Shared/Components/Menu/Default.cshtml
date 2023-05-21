@@ -1,0 +1,26 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@foreach (Product item in Model)
+{
+        <div class="tab-header text-center">
+            <p>Menu</p>
+            <h3>@Html.Raw(@item.Category.Name)</h3>
+        </div>
+
+        <div class="row gy-5">
+
+            <div class="col-lg-4 menu-item">
+                <a href="assets/img/@item.ImagePath" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
+                <h4>@Html.Raw(@item.Title)</h4>
+                <p class="ingredients">
+                  @Html.Raw(@item.Ingredients)
+                </p>
+                <p class="price">
+                    @Html.Raw(@item.Price)
+                </p>
+            </div>
+        </div>
+}
